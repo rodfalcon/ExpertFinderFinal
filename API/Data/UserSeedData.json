@@ -1,6 +1,6 @@
 [
   {
-    "Username": "Hilda",
+    "username": "Hilda",
     "Gender": "female",
     "DateOfBirth": "1956-12-19",
     "KnownAs": "Hilda",
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "Username": "Mary",
+    "username": "Mary",
     "Gender": "female",
     "DateOfBirth": "1974-07-19",
     "KnownAs": "Mary",
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "Username": "Cathleen",
+    "username": "Cathleen",
     "Gender": "female",
     "DateOfBirth": "1963-09-02",
     "KnownAs": "Cathleen",
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "Username": "Lynn",
+    "username": "Lynn",
     "Gender": "female",
     "DateOfBirth": "1986-07-17",
     "KnownAs": "Lynn",
@@ -76,7 +76,7 @@
     ]
   },
   {
-    "Username": "Allie",
+    "username": "Allie",
     "Gender": "female",
     "DateOfBirth": "1984-12-25",
     "KnownAs": "Allie",
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "Username": "Hamilton",
+    "username": "Hamilton",
     "Gender": "male",
     "DateOfBirth": "1958-09-18",
     "KnownAs": "Hamilton",
@@ -114,7 +114,7 @@
     ]
   },
   {
-    "Username": "Malone",
+    "username": "Malone",
     "Gender": "male",
     "DateOfBirth": "1998-02-22",
     "KnownAs": "Malone",
@@ -133,7 +133,7 @@
     ]
   },
   {
-    "Username": "Moreno",
+    "username": "Moreno",
     "Gender": "male",
     "DateOfBirth": "1950-01-05",
     "KnownAs": "Moreno",
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "Username": "Roberson",
+    "username": "Roberson",
     "Gender": "male",
     "DateOfBirth": "1957-10-13",
     "KnownAs": "Roberson",
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "Username": "Compton",
+    "username": "Compton",
     "Gender": "male",
     "DateOfBirth": "1963-06-29",
     "KnownAs": "Compton",

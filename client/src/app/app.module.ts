@@ -23,6 +23,9 @@ import { CommonModule} from '@angular/common'
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,11 +38,10 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     MemberListComponent,
     MemberDetailComponent,
     TestErrorsComponent,
-    NotFoundComponent,
     ServerErrorComponent,
     NotFoundComponent,
-    ServerErrorComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    MemberEditComponent
   ],
   imports: [
     BrowserModule,
@@ -47,11 +49,13 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

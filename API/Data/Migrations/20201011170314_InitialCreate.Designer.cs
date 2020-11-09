@@ -23,7 +23,7 @@ namespace API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("username")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
