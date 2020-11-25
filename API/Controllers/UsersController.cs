@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Datadog.Trace;
-
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -31,10 +31,24 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
         {
+            var user = await _userRepository.GetUserByusernameAsync(User.GetUsername());
+            userParams.CurrentUsername = User.GetUsername();
 
-            var users = await _userRepository.GetMembersAsync();
+            if(string.IsNullOrEmpty(userParams.Area)){
+                userParams.Area = user.Area;
+                // if(userParams.Area == "Fitness & Health")
+                // {
+
+                // }
+                //userParams.Area = user.Area == "Fitness & Health" ? "Fitness & Health" : "";
+
+            }
+
+
+            var users = await _userRepository.GetMembersAsync(userParams);
+            Response.AddPaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
             return Ok(users);
         }
 

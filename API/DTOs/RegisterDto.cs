@@ -11,8 +11,7 @@ namespace API.DTOs
         [Required]
         public string KnownAs { get; set; }
 
-        [Required]
-        public string Gender { get; set; }
+        public string Area { get; set; }
 
         [Required]
         public DateTime DateOfBirth { get; set; }

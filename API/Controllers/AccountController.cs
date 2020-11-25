@@ -87,7 +87,8 @@ namespace API.Controllers
                 username = user.username,
                 Token = _tokenService.CreateToken(user),
                 PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
-                KnownAs = user.KnownAs
+                KnownAs = user.KnownAs,
+                Area = user.Area
             };
         }
 

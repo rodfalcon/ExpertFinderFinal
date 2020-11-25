@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Member } from '../_models/member';
 import { AccountService } from '../_services/account.service';
 
 @Component({
@@ -13,6 +14,10 @@ export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   registerForm: FormGroup;
   validationErrors: string[] = [];
+  // userParams: UserParams;
+  // areaList = [{ value: 'Fitness & Health', display: 'Fitness & Health' }, { value: 'IT', display: 'IT' },
+  //   { value: 'Law', display: 'Law' }, { value: 'Home and Repair', display: 'Home and Repairs' },
+  //   { value: 'Courier', display: 'Couriers' }  ]
 
   constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder,
   private router: Router) { }
@@ -21,15 +26,19 @@ export class RegisterComponent implements OnInit {
     this.initializeForm();
   }
 
+  // selectChangeHandler(event: any) {
+  //   //this.member = event.target.value;
+  //   //this.area = event.target.value;
+  // }
+
   initializeForm() {
     this.registerForm = this.fb.group({
-      gender: ['male'],
+      area: ['Fitness & Health'],
       username: ['', Validators.required],
       knownAs: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
-
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
       confirmPassword: ['', [Validators.required, this.matchValues('password')]]
     })

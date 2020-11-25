@@ -34,7 +34,7 @@ namespace API.Data.Migrations
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Gender")
+                    b.Property<string>("Area")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Interests")

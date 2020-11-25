@@ -21,7 +21,7 @@ namespace API.Entities
 
         public DateTime LastActive { get; set; } = DateTime.Now;
 
-        public string Gender { get; set; }
+        public string Area { get; set; }
 
         public string Introduction { get; set; }
 

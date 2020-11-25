@@ -1,7 +1,7 @@
 [
   {
     "username": "Hilda",
-    "Gender": "female",
+    "Area": "IT",
     "DateOfBirth": "1956-12-19",
     "KnownAs": "Hilda",
     "Created": "2020-05-07",
@@ -20,7 +20,7 @@
   },
   {
     "username": "Mary",
-    "Gender": "female",
+    "Area": "Home and Repair",
     "DateOfBirth": "1974-07-19",
     "KnownAs": "Mary",
     "Created": "2019-09-11",
@@ -39,7 +39,7 @@
   },
   {
     "username": "Cathleen",
-    "Gender": "female",
+    "Area": "Fitness & Health",
     "DateOfBirth": "1963-09-02",
     "KnownAs": "Cathleen",
     "Created": "2020-03-18",
@@ -58,7 +58,7 @@
   },
   {
     "username": "Lynn",
-    "Gender": "female",
+    "Area": "Fitness & Health",
     "DateOfBirth": "1986-07-17",
     "KnownAs": "Lynn",
     "Created": "2019-06-29",
@@ -77,7 +77,7 @@
   },
   {
     "username": "Allie",
-    "Gender": "female",
+    "Area": "Courier",
     "DateOfBirth": "1984-12-25",
     "KnownAs": "Allie",
     "Created": "2019-04-16",
@@ -96,7 +96,7 @@
   },
   {
     "username": "Hamilton",
-    "Gender": "male",
+    "Area": "Law",
     "DateOfBirth": "1958-09-18",
     "KnownAs": "Hamilton",
     "Created": "2019-01-23",
@@ -115,7 +115,7 @@
   },
   {
     "username": "Malone",
-    "Gender": "male",
+    "Area": "Home and Repair",
     "DateOfBirth": "1998-02-22",
     "KnownAs": "Malone",
     "Created": "2019-01-30",
@@ -134,7 +134,7 @@
   },
   {
     "username": "Moreno",
-    "Gender": "male",
+    "Area": "Courier",
     "DateOfBirth": "1950-01-05",
     "KnownAs": "Moreno",
     "Created": "2020-04-16",
@@ -153,7 +153,7 @@
   },
   {
     "username": "Roberson",
-    "Gender": "male",
+    "Area": "IT",
     "DateOfBirth": "1957-10-13",
     "KnownAs": "Roberson",
     "Created": "2019-11-23",
@@ -172,7 +172,7 @@
   },
   {
     "username": "Compton",
-    "Gender": "male",
+    "Area": "Law",
     "DateOfBirth": "1963-06-29",
     "KnownAs": "Compton",
     "Created": "2019-03-05",
