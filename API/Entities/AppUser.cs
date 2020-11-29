@@ -22,6 +22,8 @@ namespace API.Entities
         public DateTime LastActive { get; set; } = DateTime.Now;
 
         public string Area { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
 
         public string Introduction { get; set; }
 
