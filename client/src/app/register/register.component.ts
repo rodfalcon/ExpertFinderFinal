@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   validationErrors: string[] = [];
   // userParams: UserParams;
   // areaList = [{ value: 'Fitness & Health', display: 'Fitness & Health' }, { value: 'IT', display: 'IT' },
-  //   { value: 'Law', display: 'Law' }, { value: 'Home and Repair', display: 'Home and Repairs' },
+  //   { value: 'Spa and Beauty', display: 'Spa and Beauty' }, { value: 'Home and Repair', display: 'Home and Repairs' },
   //   { value: 'Courier', display: 'Couriers' }  ]
 
   constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder,

@@ -7,7 +7,7 @@ export class UserParams {
     orderBy = 'lastActive';
 
     constructor(user: User) {
-      // this.area = user.area === 'Fitness & Health' ? 'Fitness & Health' : 'IT' ? 'IT' : 'Law' ? 'Law' : 'Home and Repair'
+      // this.area = user.area === 'Fitness & Health' ? 'Fitness & Health' : 'IT' ? 'IT' : 'Spa and Beauty' ? 'Spa and Beauty' : 'Home and Repair'
       //   ? 'Home and Repair' : 'Courier' ? 'Courier' : '';
 
       this.area = user.area;
@@ -16,8 +16,8 @@ export class UserParams {
         this.area = 'Fitness & Health';
       } else if (this.area == 'IT') {
         this.area = 'IT';
-      } else if (this.area == 'Law') {
-        this.area = 'Law';
+      } else if (this.area == 'Spa and Beauty') {
+        this.area = 'Spa and Beauty';
       } else if (this.area == 'Home and Repair') {
         this.area = 'Home and Repair';
       } else {
