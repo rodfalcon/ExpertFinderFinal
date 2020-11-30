@@ -3,7 +3,7 @@ import { User } from './user';
 export class UserParams {
     area: string;
     pageNumber = 1;
-    pageSize = 5;
+    pageSize = 10;
     orderBy = 'lastActive';
 
     constructor(user: User) {
