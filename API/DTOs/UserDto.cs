@@ -9,5 +9,7 @@ namespace API.DTOs
 
         public string KnownAs { get; set; }
         public string Area  { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
     }
 }

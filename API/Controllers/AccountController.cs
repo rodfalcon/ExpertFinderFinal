@@ -49,7 +49,10 @@ namespace API.Controllers
             {
                 username = user.username,
                 Token = _tokenService.CreateToken(user),
-                KnownAs = user.KnownAs
+                KnownAs = user.KnownAs,
+                Email = user.Email,
+                Phone = user.Phone,
+                Area = user.Area
                 //PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
             };
         }
@@ -88,6 +91,8 @@ namespace API.Controllers
                 Token = _tokenService.CreateToken(user),
                 PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
                 KnownAs = user.KnownAs,
+                Email = user.Email,
+                Phone = user.Phone,
                 Area = user.Area
             };
         }
