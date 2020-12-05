@@ -36,6 +36,8 @@ export class RegisterComponent implements OnInit {
       area: ['Fitness & Health'],
       username: ['', Validators.required],
       knownAs: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
