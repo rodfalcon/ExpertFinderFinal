@@ -34,16 +34,23 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
         {
             var user = await _userRepository.GetUserByusernameAsync(User.GetUsername());
-            userParams.CurrentUsername = User.GetUsername();
+
+            //var span = Tracer.Instance.StartSpan("GetUsers");
+
+            //userParams.CurrentUsername = User.GetUsername();
+                using (var parentScope =
+                    Tracer.Instance.StartActive("manual.getusername"))
+                {
+                    using (var childScope =
+                        Tracer.Instance.StartActive("manual.getusername.child"))
+                    {
+                        //var span = Tracer.Instance.ActivateSpan(parentScope);
+                        userParams.CurrentUsername = User.GetUsername();
+                    }
+                }
 
             if(string.IsNullOrEmpty(userParams.Area)){
                 userParams.Area = user.Area;
-                // if(userParams.Area == "Fitness & Health")
-                // {
-
-                // }
-                //userParams.Area = user.Area == "Fitness & Health" ? "Fitness & Health" : "";
-
             }
 
 
