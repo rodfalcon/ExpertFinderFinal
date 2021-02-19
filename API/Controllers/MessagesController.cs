@@ -6,6 +6,7 @@ using API.Extensions;
 using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
+using Datadog.Trace;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,6 +58,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MessageDto>>> GetMessagesForUser([FromQuery] MessageParams messageParams)
         {
+
             messageParams.username = User.GetUsername();
             var messages = await _messageRepository.GetsMessageForUser(messageParams);
             Response.AddPaginationHeader(messages.CurrentPage, messages.PageSize, messages.TotalCount, messages.TotalPages);
@@ -71,6 +73,23 @@ namespace API.Controllers
 
             return Ok(await _messageRepository.GetMessageThread(currentUsername, username));
         }
+
+        // [HttpGet("{id}")]
+        // public async Task<ActionResult> InstrumentMessage(int Id)
+        // {
+        //     var scope = Tracer.Instance.ActiveScope;
+
+        //     if (scope != null)
+        //     {
+        //         // Add a tag to the span for use in the Datadog web UI
+        //         scope.Span.SetTag("message.id", Id.ToString());
+        //     }
+
+        //     var msg = await _messageRepository.GetMessage(Id);
+
+        //     return View(cart);
+
+        // }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteMessage(int id)

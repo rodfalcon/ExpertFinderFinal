@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using API.Interfaces;
 using System.Linq;
 using AutoMapper;
+using Datadog.Trace;
 
 namespace API.Controllers
 {
@@ -55,6 +56,7 @@ namespace API.Controllers
                 Area = user.Area
                 //PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
             };
+
         }
 
         private async Task<bool> UserExists(string username)
