@@ -1,0 +1,21 @@
+version: '3'
+services:
+  datadog:
+    environment:
+      DD_API_KEY: fa627c7c7cee0accdb7efb20ea6829c9
+      DD_ENV: sandbox
+      DD_APM_NON_LOCAL_TRAFFIC: "true"
+    image: datadog/agent:latest
+    container_name: datadog-agent
+    ports:
+      - 8125:8125
+      - 8126:8126 #Optional unless you use host IP instead of setting DD_AGENT_HOST.
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/passwd:/etc/passwd:ro
+networks: #Optional if not configuring both containers on the same compose
+  default:
+    external:
+      name: tracer_network

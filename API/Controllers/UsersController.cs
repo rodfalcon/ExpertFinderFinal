@@ -35,14 +35,11 @@ namespace API.Controllers
         {
             var user = await _userRepository.GetUserByusernameAsync(User.GetUsername());
 
-            //var span = Tracer.Instance.StartSpan("GetUsers");
-
-            //userParams.CurrentUsername = User.GetUsername();
                 using (var parentScope =
-                    Tracer.Instance.StartActive("manual.getusername"))
+                    Tracer.Instance.StartActive("GET.username"))
                 {
                     using (var childScope =
-                        Tracer.Instance.StartActive("manual.getusername.child"))
+                        Tracer.Instance.StartActive("GET.username.child"))
                     {
                         //var span = Tracer.Instance.ActivateSpan(parentScope);
                         userParams.CurrentUsername = User.GetUsername();
@@ -62,12 +59,14 @@ namespace API.Controllers
         [HttpGet("{username}", Name = "GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-            // var scope = Tracer.Instance.ActiveScope;
-            // if (scope != null)
-            // {
+            var scope = Tracer.Instance.ActiveScope;
+
+            if (scope != null)
+            {
+                // Add a tag to the span for use in the Datadog web UI
+                scope.Span.SetTag("username.id", username);
+            }
             
-            //     scope.Span.SetTag("user.id", username);
-            // }
             return await _userRepository.GetMemberAsync(username);
 
         }

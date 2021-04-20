@@ -1,7 +1,13 @@
 {
+  "CORECLR_ENABLE_PROFILING":1,
+  "CORECLR_PROFILER":"{846F5F1C-F9AE-4B07-969E-05C26BC060D8}",
+  "CORECLR_PROFILER_PATH":"/opt/datadog/Datadog.Trace.ClrProfiler.Native.so",
+  "DD_INTEGRATIONS":"/opt/datadog/integrations.json",
+  "DD_DOTNET_TRACER_HOME":"/opt/datadog",
   "DD_TRACE_AGENT_URL": "http://localhost:8126",
   "DD_ENV": "prod",
-  "DD_SERVICE": "DotNetTracer",
+  "DD_SERVICE": "ExpertFinder",
   "DD_VERSION": "v2",
-  "DD_LOGS_INJECTION": true
+  "DD_LOGS_INJECTION": true,
+  "DD_TRACE_SAMPLE_RATE":"1"
 }
