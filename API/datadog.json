@@ -1,7 +1,0 @@
-{
-  "DD_TRACE_AGENT_URL": "http://localhost:8126",
-  "DD_ENV": "prod",
-  "DD_SERVICE": "DotNetTracer",
-  "DD_VERSION": "v2",
-  "DD_LOGS_INJECTION": true
-}

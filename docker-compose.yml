@@ -1,0 +1,37 @@
+version: '3'
+services:
+  datadog-agent:
+    image: datadog/agent:latest
+    env_file:
+      - ~/sandbox.docker.env    
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+    ports:
+      - 8126:8126/tcp
+    environment:
+      - DD_APM_ENABLED=true
+      - DD_APM_NON_LOCAL_TRAFFIC=true
+      - DD_LOG_LEVEL=TRACE
+      - DD_AC_EXCLUDE=name:datadog-agent
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    volumes:
+      - ./ExpertFinderFinal/data/API/expertfinder.db
+    environment:
+      SA_PASSWORD: "BigPassw0rd"
+      ACCEPT_EULA: "Y"     
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    volumes:
+      - ./expertfinder:/Users/rodrigo.falcaodossantos/Hackaday and Sandboxes/SandboxHotbox/sandbox/APM/.NET/Personal Project/ExpertFinderFinal/data
+    environment:
+      - DD_AGENT_HOST=datadog-agent
+      - DD_TRACE_DEBUG=true
+    depends_on:
+      - db
+      - datadog-agent

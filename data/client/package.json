@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "export HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,6 +24,7 @@
     "@kolkov/ngx-gallery": "^1.2.3",
     "bootstrap": "^4.5.3",
     "bootswatch": "^4.5.3",
+    "cors": "^2.8.5",
     "dd-trace": "^0.30.5",
     "font-awesome": "^4.7.0",
     "ng2-file-upload": "^1.4.0",
